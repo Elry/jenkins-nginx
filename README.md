@@ -1,8 +1,15 @@
 # Jenkins container with Nginx container as proxy
-
 [![Git](https://img.shields.io/badge/Git-1f425f.svg)]()
 [![Docker](https://img.shields.io/badge/Docker-1f425f.svg)]()
 [![Jenkins](https://img.shields.io/badge/Jenkins-1f425f.svg)]()
+
+<br/>
+
+# jenkins.conf for default
+proxy_pass         http://leeroy:8080;
+
+# jenkins.conf for docker-compose
+proxy_pass         http://jenkins_master_1:8080;"
 
 ## Creating network container
 ```bash
@@ -35,7 +42,34 @@ Outputs the pass to terminal:
 $docker exec leeroy cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
+# Running with docker-compose
+
 ## Displaying logs from the hosted volume of a detached container
 ```bash
 $docker exec <container_name> tail -f /var/log/jenkins/jenkins.log
+```
+
+## Building and run with composer
+
+```bash
+$docker-compose build
+$docker-compose -p jenkins up -d
+```
+
+## Getting Jenkins first time password
+Outputs the pass to terminal:
+```bash
+$docker exec leeroy cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+## Get first time pass
+```bash
+$docker exec jenkins_master_1 cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+## Delete everything
+The "-v" flag also deletes the created volumes
+
+```bash
+$docker-compose -p jenkins down -v
 ```
