@@ -11,8 +11,8 @@ $docker network create --driver  bridge jenkins-net
 
 ## Creating the persistent volumes
 ```bash
-$docker volume create <log_volume>
-$docker volume create <data_volume>
+$docker volume create jenkins-log
+$docker volume create jenkins-data
 ```
 
 ## Building custom images from dockerfile
