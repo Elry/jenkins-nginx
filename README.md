@@ -1,4 +1,4 @@
-# Docker jenkins container with Nginx as web proxy
+# Jenkins container with Nginx container as proxy
 
 [![Git](https://img.shields.io/badge/Git-1f425f.svg)]()
 [![Docker](https://img.shields.io/badge/Docker-1f425f.svg)]()
