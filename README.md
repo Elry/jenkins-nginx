@@ -4,12 +4,16 @@
 [![Jenkins](https://img.shields.io/badge/Jenkins-1f425f.svg)]()
 
 <br/>
+Source: https://technology.riotgames.com/news/jenkins-ephemeral-docker-tutorial
+<br/><br/><br/>
 
 # jenkins.conf for default
 proxy_pass         http://leeroy:8080;
+<br/><br/>
 
 # jenkins.conf for docker-compose
-proxy_pass         http://jenkins_master_1:8080;"
+proxy_pass         http://jenkins_master_1:8080;
+<br/><br/>
 
 ## Creating network container
 ```bash
